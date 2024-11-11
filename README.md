@@ -1,5 +1,5 @@
 # odin-recipes
-This project is part of The Odin Project's Full Stack curriculum. It is a simple website showcasing various recipes. Each recipe has its own page with an image, description, ingredients, and cooking steps.
+This project is part of The Odin Project's curriculum. It is a simple website showcasing various recipes. Each recipe has its own page with an image, description, ingredients, and cooking steps.
 
 Features
 Homepage: Displays a list of recipes with links to individual recipe pages.
