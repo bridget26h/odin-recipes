@@ -1,21 +1,72 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Odin Recipes</title>
-    </head>
-    <body>
-        <h1>Odin Recipes</h1>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day Translation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        select {
+            font-size: 16px;
+            padding: 5px;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
 
-        <h3>Cookies</h3>
-        <ul>
-            <li><a href="recipes/toffee-bits.html">Homemade Toffee Bits</a></li>
-            <li><a href="recipes/toffee-chocolate-chip-cookies.html">Brown Butter Toffee Chocolate Chip Cookies</a></li>
-        </ul>
+    <h1>Day of the Week Translation</h1>
 
-        <h3>Dinner</h3>
-        <ul>
-            <li><a href="recipes/baked-ziti.html">Baked Ziti</a></li>
-        </ul>
-    </body>
+    <!-- Dropdown menu -->
+    <label for="days">Select a day of the week:</label>
+    <select id="days">
+        <option value="">--Select--</option>
+        <option value="monday">Monday</option>
+        <option value="tuesday">Tuesday</option>
+        <option value="wednesday">Wednesday</option>
+        <option value="thursday">Thursday</option>
+        <option value="friday">Friday</option>
+        <option value="saturday">Saturday</option>
+        <option value="sunday">Sunday</option>
+    </select>
+
+    <!-- Output area for the translation -->
+    <p id="translation"></p>
+
+    <script>
+        // Object to hold the translations from English to Chinese
+        const dayTranslations = {
+            monday: "星期一",
+            tuesday: "星期二",
+            wednesday: "星期三",
+            thursday: "星期四",
+            friday: "星期五",
+            saturday: "星期六",
+            sunday: "星期天"
+        };
+
+        // Event listener for the dropdown menu
+        document.getElementById('days').addEventListener('change', function() {
+            const selectedDay = this.value;
+            const translationElement = document.getElementById('translation');
+
+            // Check if a day is selected
+            if (selectedDay) {
+                // Show the translation
+                translationElement.textContent = `The Chinese translation of ${selectedDay.charAt(0).toUpperCase() + selectedDay.slice(1)} is: ${dayTranslations[selectedDay]}`;
+            } else {
+                // Clear the translation if no day is selected
+                translationElement.textContent = '';
+            }
+        });
+    </script>
+
+</body>
 </html>
